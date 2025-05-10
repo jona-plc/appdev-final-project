@@ -17,13 +17,18 @@ This project is a dynamic and responsive web application built using **Next.js**
 
 
 - **[Joelheen Berania]**  
-  - **Form Validation**: User registration form validation with Zod  
-  - **UI Enhancements**: User profile rendering and modal improvements
+- Ui design
 
-- **[Teammate 2 Name]**  
-  - **Post and Comments**: Display and interactions  
-  - **User Interface**: Styling enhancements and responsiveness  
-  - **Functionality**: Post detail modal and dynamic comment loading
+- **[Juvy Fresnido]**  
+  - Map Integration
+
+- **[Markniel Dela Pena]**  
+  - Developer
+
+  
+- **[Rosielyn Ripo]**  
+  - Setup Laptop requirements
+
 
 >  All team members have contributed meaningfully and used Git commits for collaboration.
 
