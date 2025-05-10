@@ -12,7 +12,7 @@ export default async function UsersPage() {
 
   return (
     <div className="p-8 bg-gray-50 min-h-screen">
-      {/* Adjusted margin-top to push the title down */}
+      
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8 mt-20">User List</h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {users.map((user) => (

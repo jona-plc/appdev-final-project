@@ -3,10 +3,8 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 
-// Dynamic import of ApexCharts with SSR disabled
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false });
 
-// Define interfaces for the data
 interface User {
   id: number;
   name: string;
@@ -35,17 +33,15 @@ export default function DashboardPage() {
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
-    // Fetch users
+ 
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
       .then(setUsers);
 
-    // Fetch posts
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
       .then(setPosts);
 
-    // Fetch comments
     fetch('https://jsonplaceholder.typicode.com/comments')
       .then((res) => res.json())
       .then(setComments);

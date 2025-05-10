@@ -42,7 +42,6 @@ export default function PostsPage() {
     const user = JSON.parse(userData);
     setUser(user);
 
-    // Fetch posts based on the logged-in user
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(res => res.json())
       .then(data => {
@@ -64,7 +63,6 @@ export default function PostsPage() {
     setSelectedPostId(postId);
     setModalOpen(true);
 
-    // Fetch comments for the selected post
     if (!comments[postId]) {
       const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
       const data = await res.json();
@@ -106,12 +104,11 @@ export default function PostsPage() {
         ))}
       </div>
 
-      {/* Modal for comments */}
       {modalOpen && selectedPostId !== null && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg w-3/4 max-w-2xl p-6 relative">
             <h3 className="text-xl font-semibold mb-4">Comments</h3>
-            {/* Close Button */}
+            
             <button
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
               onClick={closeModal}
@@ -121,7 +118,7 @@ export default function PostsPage() {
             <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
               {comments[selectedPostId]?.map(comment => (
                 <div key={comment.id} className="bg-gray-50 border rounded-lg p-4">
-                  {/* Commenter Information */}
+                 
                   <div className="flex items-center mb-2">
                     <span className="font-medium text-gray-800">{comment.name}</span>
                     <span className="text-sm text-gray-500 ml-2">- Commenter</span>

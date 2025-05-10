@@ -7,7 +7,7 @@ const userSchema = {
   email: '',
   phoneNumber: '',
   address: '',
-  mapType: 'address', // 'address' or 'iframe'
+  mapType: 'address',
   mapInput: '',
 };
 
@@ -42,7 +42,6 @@ export default function UserRegisterPage() {
   const handleUserSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simple validation before registration
     if (!newUser.firstName || !newUser.lastName || !newUser.email || !newUser.phoneNumber || !newUser.mapInput) {
       setModalType('error');
       setModalMessage('Please fill out all fields.');
@@ -50,7 +49,6 @@ export default function UserRegisterPage() {
       return;
     }
 
-    // Simulate user registration success
     const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
     existingUsers.push(newUser);
     localStorage.setItem('users', JSON.stringify(existingUsers));
@@ -131,7 +129,6 @@ export default function UserRegisterPage() {
           </form>
         </div>
 
-        {/* Modal */}
         {modalState && (
           <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 z-50">
             <div className={`bg-white p-6 rounded-lg shadow-md w-96 ${modalType === 'error' ? 'border-red-500' : 'border-green-500'}`}>
